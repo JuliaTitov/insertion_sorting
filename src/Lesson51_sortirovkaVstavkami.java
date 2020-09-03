@@ -22,13 +22,13 @@ public class Lesson51_sortirovkaVstavkami {
 	static void sort(int [] array) {
 		for(int i = 1; i < array.length; i++) {
 			if(array[i] < array[i-1]) {
-				int vstavka = array[i];
-				int index = i;
-				while ((index > 0) && (vstavka < array[index-1])) {
-					array[index] = array[index-1];
-					index--;		
+				int currentItem = array[i];
+				int currentMovedIndex = i;
+				while ((currentMovedIndex > 0) && (currentItem < array[currentMovedIndex-1])) {
+					array[currentMovedIndex] = array[currentMovedIndex-1];
+					currentMovedIndex--;		
 				}
-				array[index] = vstavka;
+				array[currentMovedIndex] = currentItem;
 			}
 		}
 	}
